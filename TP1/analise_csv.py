@@ -12,21 +12,22 @@ def ler_ficheiro():
     for linha in sys.stdin:
         n_atletas += 1
         parametros = linha.strip().split(',')
+
         #Coloca todas as modalidades numa lista
         modalidades.add(parametros[8])
+
         #Apto ou não apto
         if(parametros[12] == "true"):
             aptos +=1
         else: inaptos += 1
+
         #Fazer Distribuição -> resultado é o número de atletas e o nomes de todos
         escalao = int(parametros[5]) // 5 * 5
         nome = parametros[3] + ' ' + parametros[4]
+        
         if escalao not in distribuicoes.keys():
-            #distribuicoes[escalao] = 1
             distribuicoes[escalao] = (1, [nome])
         else:
-            #total = distribuicoes[escalao]
-            #distribuicoes[escalao] = total + 1
             total,nomes = distribuicoes[escalao]
             distribuicoes[escalao] = (total + 1, nomes + [nome])
 
@@ -37,21 +38,24 @@ def ler_ficheiro():
     percAptos = aptos / n_atletas * 100
     percInaptos = inaptos / n_atletas * 100
 
-    return modalidadessorted, percAptos, percInaptos, distribuicoes
+    return modalidadessorted, percAptos, percInaptos, distribuicoes, n_atletas
 
 
 def main():
-    modalidades,aptos,inaptos,distribuicao = ler_ficheiro()
+    modalidades,aptos,inaptos,distribuicao,atletas = ler_ficheiro()
 
     print("Modalidades Desportivas Ordenadas: \n", modalidades)
 
     print("\nPercentagem de Atletas Aptos: \n", aptos)
     print("Percentagem de Atletas Inaptos: \n", inaptos)
 
-    print("\nDistribuição de Atletas por Escalão: ")
+    print("\nDistribuição de Atletas por Escalão: \n")
     for i in range(0,100,5):
         if i in distribuicao:
-            print(f"[{i}-{i+4}]:", distribuicao[i], "\n")
+            total, nomes = distribuicao[i]
+            percentagem = total / atletas * 100
+            print(f"[{i}-{i+4}]:", total, "->", percentagem, "%")
+            print(f"Atletas:",nomes, "\n")
 
 
 
