@@ -1,0 +1,46 @@
+{
+  "stock": [
+    {
+      "cod": 1,
+      "nome": "\u00c1gua 0.5L",
+      "quant": 10,
+      "preco": 0.5
+    },
+    {
+      "cod": 2,
+      "nome": "Pepsi",
+      "quant": 6,
+      "preco": 0.8
+    },
+    {
+      "cod": 3,
+      "nome": "Compal",
+      "quant": 7,
+      "preco": 0.8
+    },
+    {
+      "cod": 4,
+      "nome": "Salame Chocolate",
+      "quant": 2,
+      "preco": 0.9
+    },
+    {
+      "cod": 5,
+      "nome": "Lanche Fiambre",
+      "quant": 4,
+      "preco": 0.7
+    },
+    {
+      "cod": 6,
+      "nome": "Wrap Vegetariano",
+      "quant": 6,
+      "preco": 1.1
+    },
+    {
+      "cod": 7,
+      "nome": "Gomas",
+      "quant": 3,
+      "preco": 1.0
+    }
+  ]
+}
